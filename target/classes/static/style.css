@@ -1,0 +1,53 @@
+body{
+    overflow-x: hidden;
+    background-color: white ;
+    margin: auto;
+}
+
+.row>* {
+    width: auto;
+}
+
+* {
+    -webkit-border-radius: 0 !important;
+       -moz-border-radius: 0 !important;
+            border-radius: 0 !important;
+  }
+
+.span.error{
+    color: red !important;
+}
+
+hr {
+    border:none;
+    border-top:15px double #990000; 
+    color:yellow;
+    background-color:yellow;
+    opacity: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+
+p{
+    white-space: nowrap;
+    font-family:'Lexend Exa', sans-serif;
+    font-size: 15px;
+    color: white;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: #990000;
+    
+}
+
+table.sorting tr:not(.home) {
+    cursor: pointer;
+}
+
+.ui-state-highlight {
+    border: 1px dashed #ccc;
+}

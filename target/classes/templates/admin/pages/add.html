@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="/fragments/head"></head>
+<body style="background-color: #F9F2ED;">
+    <nav th:replace="/fragments/nav :: nav-admin"></nav>
+    <br>
+    <hr>
+    <p>ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN</p>
+    <hr>
+    <div class="container1" style="padding: 50px 100px 55px 100px;">
+        <div class="rowaa">
+            <h1 class="display-2">ADD A PAGE</h1>
+            <div style="padding-bottom: 50px;"><a href="/admin/pages/" type="button" class="btn btn-primary w-20">Back to Pages</a></div>
+            
+            <div th:if="${message}" th:text="${message}" th:class="${'alert'+ alertClass}" style="text-align: center; margin-bottom: 30px;"></div>
+            
+            <form method="post" th:object="${page}" th:action="@{/admin/pages/add}">
+                <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                    Errors are Detected!
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Title</b></label>
+                    <input pattern="[A-Za-z1-9' ']{2,80}" required type="text" class="form-control" th:field="*{title}" placeholder="Title must be at least 2 characters long!">
+                    <span class="error" th:if="${#fields.hasErrors('title')}" th:error="*{title}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Slug</b></label>
+                    <input type="text" class="form-control" th:field="*{slug}" placeholder="Slug">
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Content</b></label>
+                    <textarea minlength="5" required th:field="*{content}" rows="10" class="form-control" placeholder="Content must be at least 5 characters long!"></textarea>
+                    <span class="error" th:if="${#fields.hasErrors('content')}" th:error="*{content}"></span>
+                </div>
+                <br>
+                <button class="btn btn-danger">Add</button>
+            </form>
+        </div>
+    </div>
+    <div th:replace="/fragments/footer"></div>
+</body>
+
+</html>
