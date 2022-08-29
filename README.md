@@ -53,5 +53,5 @@ https://user-images.githubusercontent.com/103124512/187304108-596685d6-8dab-4b51
   CREATE TABLE admin(
   id serial PRIMARY KEY,
   username VARCHAR(45) NOT NULL,
-  password VARCHAR(245) NOT NULL,
+  password VARCHAR(245) NOT NULL);
   ```
