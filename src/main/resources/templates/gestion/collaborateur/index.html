@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="/fragments/head"></head>
+<body style="background-color: ivory;">
+    <nav th:replace="/fragments/nav :: nav-front"></nav>
+    <br>
+    <div class="container1" style="padding: 50px 70px 50px 70px;">
+        <div class="rowaa">
+            <h1 class="display-2">COLLABORATEURS</h1>
+            <a href="/gestion/collaborateur/add" type="button" class="btn btn-primary w-20">Ajouter Collaborateur</a>
+            <div th:if="${message}" th:text="${message}" th:class="${'alert'+ alertClass}" style="text-align: center; padding-top: 0px;"></div>
+            <br>
+            <br>
+            <br>
+            <blink style="color:brown; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> <em>Faites défiler pour voir le reste du tableau</em> <span>&#8628;</span></blink>
+            <div class="pt-4" th:if = ${!pages.empty} style="overflow-x:auto; border: 3px solid black; margin-top: 40px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; background-color: white;">
+                <table class="table sorting" style="background-color: white;">
+                    <tr class="home">
+                        <th>Nom collaborateur</th>
+                        <th>Prénom Collaborateur</th>
+                        <th>Abréviation collaborateur</th>
+                        <th>Ancien Manager RH</th>
+                        <th>Manager RH actuel</th>
+                        <th>Sexe</th>
+                        <th>Site</th>
+                        <th>BU</th>
+                        <th>Date Embauche</th>
+                        <th>Mois BAP</th>
+                        <th>Date Départ</th>
+                        <th>Ancien Collaborateur</th>
+                        <th>Participé au séminaire d'intégration</th>
+                        <th>Date participation</th>
+                        <th>Poste APP</th>
+                        <th>Poste Actuel</th>
+                        <th>Salaire Actuel</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr th:each ="page: ${pages}" th:id="'id_' + ${page.matricule}" th:class="${page.nom}">
+                        <td th:text = "${page.nom}"></td>
+                        <td th:text = "${page.prenom}"></td>
+                        <td th:text = "${page.abrev}"></td>
+                        <td th:text = "${page.ancien_rh}"></td>
+                        <td th:text = "${page.rh_ctuel}"></td>
+                        <td th:text = "${page.gender}"></td>
+                        <td th:text = "${page.site}"></td>
+                        <td th:text = "${page.bu}"></td>
+                        <td th:text = "${page.embauche}"></td>
+                        <td th:text = "${page.bap}"></td>
+                        <td th:text = "${page.depart}"></td>
+                        <td th:text = "${page.ancien_collab}"></td>
+                        <td th:text = "${page.seminaire}"></td>
+                        <td th:text = "${page.date_seminaire}"></td>
+                        <td th:text = "${page.app}"></td>
+                        <td th:text = "${page.poste}"></td>
+                        <td th:text = "${page.salaire}"></td>
+                        <td><a th:href="@{'/gestion/collaborateur/edit/' + ${page.matricule}}">Modifier</a></td>
+                        <td><a th:href="@{'/gestion/collaborateur/delete/' + ${page.matricule}}" class="confirmDeletion">Supprimer</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div th:unless = ${!pages.empty}>
+                <h4 class="display-4" style="padding-bottom: 20px; padding-top: 20px;"><span style="color: red;">PAS</span> DE COLLABORATEURS POUR LE MOMENT</h4>
+            </div> 
+        </div>
+    </div>
+</body>
+
+</html>

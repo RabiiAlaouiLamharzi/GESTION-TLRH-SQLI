@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.*;
 
 import lombok.Data;
 
@@ -13,17 +12,43 @@ import lombok.Data;
 @Table(name="pages")
 @Data
 public class Page{ 
-        @Id
-        @GeneratedValue(strategy=GenerationType.IDENTITY)
-        private int id;
-        
-        @Size(min = 2, message = "Content must be at least 2 characters long!")
-        private String title;
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int matricule;
 
-        private String slug;
+    private String nom;
 
-        @Size(min = 5, message = "Content must be at least 5 characters long!")
-        private String content;
+    private String prenom;
 
-        private int sorting;
+    private String abrev;
+
+    private String ancien_rh;
+
+    private String rh_ctuel;
+
+    private String gender;
+
+    private String site;
+
+    private String bu;
+
+    private String embauche;
+
+    private String bap;
+
+    private String depart;
+    
+    private String ancien_collab;
+
+    private String seminaire;
+
+    private String date_seminaire;
+
+    private String app;
+
+    private String poste;
+
+    private int salaire;
+
+    private int sorting;
 }

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="/fragments/head"></head>
+<body style="background-color: ivory;">
+    <nav th:replace="/fragments/nav :: nav-front"></nav>
+    <br>
+    <div class="container1" style="padding: 50px 70px 50px 70px;">
+        <div class="row">
+            <div class="col align-self-center">
+            <h1 class="display-2">AJOUTER COLLABORATEUR</h1>
+            <div style="padding-bottom: 50px;"><a href="/gestion/collaborateur/" type="button" class="btn btn-primary w-20">Retour</a></div>
+            
+            <div th:if="${message}" th:text="${message}" th:class="${'alert'+ alertClass}" style="text-align: center; margin-bottom: 30px;"></div>
+            
+            <form method="post" th:object="${page}" th:action="@{/gestion/collaborateur/add}">
+               <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                    Des erreurs sont détectées !
+                </div> 
+                <div class="form-group">
+                    <label for=""><b>Nom collaborateur</b></label>
+                    <p><em>*Nom collaborateur doit comporter au moins un caractère!</em></p>
+                    <input pattern="[A-Za-z]{1,8000}" required type="text" class="form-control" th:field="*{nom}">
+                    <span class="error" th:if="${#fields.hasErrors('nom')}" th:error="*{nom}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Prénom collaborateur</b></label>
+                    <p><em>*Prénom collaborateur doit comporter au moins un caractère!</em></p>
+                    <input pattern="[A-Za-z]{1,8000}" required type="text" class="form-control" th:field="*{prenom}">
+                    <span class="error" th:if="${#fields.hasErrors('prenom')}" th:error="*{prenom}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Abréviation collaborateur</b></label>
+                    <p><em>*Abréviation collaborateur est un text de 3 caractères!</em></p>
+                    <input pattern="[A-Za-z]{3,3}" required type="text" class="form-control" th:field="*{abrev}">
+                    <span class="error" th:if="${#fields.hasErrors('abrev')}" th:error="*{abrev}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Ancien Manager RH</b></label>
+                    <p><em>*Ancien Manager RH doit comporter au moins un caractère!</em></p>
+                    <input pattern="[A-Za-z]{1,8000}" required type="text" class="form-control" th:field="*{ancien_rh}">
+                    <span class="error" th:if="${#fields.hasErrors('ancien_rh')}" th:error="*{ancien_rh}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Manager RH actuel</b></label>
+                    <p><em>*Manager RH actuel doit comporter au moins un caractère!</em></p>
+                    <input pattern="[A-Za-z]{1,8000}" required type="text" class="form-control" th:field="*{rh_ctuel}">
+                    <span class="error" th:if="${#fields.hasErrors('rh_ctuel')}" th:error="*{rh_ctuel}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Sexe</b></label>
+                    <p><em>*Sexe doit comporter une seule lettre seulement (M ou F)!</em></p>
+                    <input pattern="(F|M){1,1}" required type="text" class="form-control" th:field="*{gender}">
+                    <span class="error" th:if="${#fields.hasErrors('gender')}" th:error="*{gender}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Site</b></label>
+                    <p><em>*Site doit comporter au moins un caractère!</em></p>
+                    <input pattern="[A-Za-z]{1,8000}" required type="text" class="form-control" th:field="*{site}">
+                    <span class="error" th:if="${#fields.hasErrors('site')}" th:error="*{site}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>BU</b></label>
+                    <p><em>*BU est un text de 4 caractères(3 lettres et un chiffre à la fin)!</em></p>
+                    <input pattern="[A-Za-z][A-Za-z][A-Za-z][0-9]" required type="text" class="form-control" th:field="*{bu}">
+                    <span class="error" th:if="${#fields.hasErrors('bu')}" th:error="*{bu}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Date Embauche</b></label>
+                    <p><em>*Saisir une date avec le format yyyy-mm-dd</em></p>
+                    <input pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])" required type="text" class="form-control" th:field="*{embauche}">
+                    <span class="error" th:if="${#fields.hasErrors('embauche')}" th:error="*{embauche}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Mois BAP</b></label>
+                    <p><em>*Mois BAP doit comporter au moins un caractère!</em></p>
+                    <input pattern="[A-Za-z0-9]{1,8000}" required type="text" class="form-control" th:field="*{bap}">
+                    <span class="error" th:if="${#fields.hasErrors('bap')}" th:error="*{bap}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Date Départ</b></label>
+                    <p><em>*Saisir une date avec le format yyyy-mm-dd</em></p>
+                    <input pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])" required type="text" class="form-control" th:field="*{depart}">
+                    <span class="error" th:if="${#fields.hasErrors('depart')}" th:error="*{depart}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Ancien Collaborateur</b></label>
+                    <p><em>*Ancien Collaborateur doit comporter True/False (T ou F)!</em></p>
+                    <input pattern="(T|F){1,1}" required type="text" class="form-control" th:field="*{ancien_collab}">
+                    <span class="error" th:if="${#fields.hasErrors('ancien_collab')}" th:error="*{ancien_collab}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Participé au séminaire d'intégration</b></label>
+                    <p><em>*Ce champ doit comporter True/False (T ou F)!</em></p>
+                    <input pattern="(T|F){1,1}" required type="text" class="form-control" th:field="*{seminaire}">
+                    <span class="error" th:if="${#fields.hasErrors('seminaire')}" th:error="*{seminaire}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Date participation</b></label>
+                    <p><em>*Saisir une date avec le format yyyy-mm-dd</em></p>
+                    <input pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])" required type="text" class="form-control" th:field="*{date_seminaire}">
+                    <span class="error" th:if="${#fields.hasErrors('date_seminaire')}" th:error="*{date_seminaire}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Poste APP</b></label>
+                    <p><em>*Poste APP est un text de 3 caractères(2 lettres et un chiffre à la fin)!</em></p>
+                    <input pattern="[A-Za-z][A-Za-z][0-9]" required type="text" class="form-control" th:field="*{app}">
+                    <span class="error" th:if="${#fields.hasErrors('app')}" th:error="*{app}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Poste Actuel</b></label>
+                    <p><em>*Poste Actuel est un text de 4 caractères(3 lettres et un chiffre à la fin)!</em></p>
+                    <input pattern="[A-Za-z0-9]{4,4}" required type="text" class="form-control" th:field="*{poste}">
+                    <span class="error" th:if="${#fields.hasErrors('poste')}" th:error="*{poste}"></span>
+                </div>
+                <div class="form-group">
+                    <label for=""><b>Salaire actuel</b></label>
+                    <p><em>*Salaire en Dhs</em></p>
+                    <input pattern="[0-9]{1,8000}" required type="text" class="form-control" th:field="*{salaire}">
+                    <span class="error" th:if="${#fields.hasErrors('salaire')}" th:error="*{salaire}"></span>
+                </div>
+                <br>
+                <button class="btn btn-danger">Ajouter</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

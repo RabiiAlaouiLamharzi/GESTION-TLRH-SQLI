@@ -2,39 +2,12 @@
 <html lang="en">
 
 <head th:replace="/fragments/head"></head>
-<body style="background-color: #F9F2ED;">
+<body style="background-color: yellow;">
     <nav th:replace="/fragments/nav :: nav-admin"></nav>
     <br>
     <hr>
-    <p>ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN</p>
+    <p class="adminTitle">ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN-ADMIN</p>
     <hr>
-    <div class="container1" style="padding: 50px 104px 55px 104px;">
-        <div class="rowaa">
-            <h1 class="display-2">PAGES</h1>
-            <a href="/admin/pages/add" type="button" class="btn btn-primary w-20">Add New</a>
-            <div th:if="${message}" th:text="${message}" th:class="${'alert'+ alertClass}" style="text-align: center; margin-top: 30px;"></div>
-            <div class="pt-4" th:if = ${!pages.empty}>
-                <table class="table sorting">
-                    <tr class="home">
-                        <th>Title</th>
-                        <th>Slug</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    <tr th:each ="page: ${pages}" th:id="'id_' + ${page.id}" th:class="${page.slug}">
-                        <td th:text = "${page.title}"></td>
-                        <td th:text = "${page.slug}"></td>
-                        <td><a th:href="@{'/admin/pages/edit/' + ${page.id}}">Edit</a></td>
-                        <td><a th:if="${page.slug != 'home'}" th:href="@{'/admin/pages/delete/' + ${page.id}}" class="confirmDeletion">Delete</a></td>
-                    </tr>
-                </table>
-            </div>
-            <div th:unless = ${!pages.empty}>
-                <h4 class="display-4" style="padding-bottom: 20px; padding-top: 20px;"><span style="color: red;">NO</span> PAGES AT THE MOMENT</h4>
-            </div> 
-        </div>
-    </div>
-    <div th:replace="/fragments/footer"></div>
 </body>
 
 </html>

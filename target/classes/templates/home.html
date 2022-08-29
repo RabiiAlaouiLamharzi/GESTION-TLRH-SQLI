@@ -7,11 +7,24 @@
     <div class="container1" style="padding: 50px 100px 55px 100px;">
         <div class="row">
             <div class="col">
-                <h1>SPRING BOOT</h1>
+                <center>
+                <div style=" width: 210px; border: 3px solid rgb(68, 8, 92);"><img style="width:200px;" th:src="@{/images/sqli.png}"></div>
+                <br>
+                <h1>GESTION TLRH</h1>
+                <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a class="btn btn-primary" th:href="@{/gestion/collaborateur}" role="button" style="width: 300px;">Collaborateur</a>
+                      </div>
+                      <div class="col-sm">
+                        <a class="btn btn-danger" th:href="@{/admin/pages}" role="button" style="width: 300px;">Admin</a>
+                      </div>
+                    </div>
+                </div>
+                </center>
             </div>
         </div>
     </div>
-    <div th:replace="/fragments/footer"></div>
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="/fragments/head"></head>
+<body>
+    <nav th:replace="/fragments/nav :: nav-front"></nav>
+    <div class="container1" style="padding: 50px 100px 55px 100px;">
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <h1 style="color: red; font-size: 10rem;">ERROR 404</h1>
+                <h1>Vous n'avez pas accès à cette page !</h1>
+                <br>
+                <h4 style="color: grey;">
+                    Cliquez <a th:href="@{/}">ICI</a> Pour Revenir.
+                </h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
