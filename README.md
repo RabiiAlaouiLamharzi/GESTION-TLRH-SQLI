@@ -2,6 +2,10 @@
 
 GESTION-TLRH-SQLI is an application that manages human capital inside SQLI. The application was completed as part of my internship at the company in Summer 2022.
 
+**Demo of the Application (in French):**
+
+https://user-images.githubusercontent.com/103124512/187304108-596685d6-8dab-4b51-b023-eb11948fdcc8.mp4
+
 **To use, you need to:**
 
 - Download or clone this repository
@@ -51,7 +55,3 @@ GESTION-TLRH-SQLI is an application that manages human capital inside SQLI. The 
   username VARCHAR(45) NOT NULL,
   password VARCHAR(245) NOT NULL,
   ```
-
-**Demo of the Application (in French):**
-
-https://user-images.githubusercontent.com/103124512/187304108-596685d6-8dab-4b51-b023-eb11948fdcc8.mp4
