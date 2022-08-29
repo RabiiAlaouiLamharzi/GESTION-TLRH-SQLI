@@ -1,4 +1,4 @@
-# GESTION-TLRH-SQLI
+# GESTION-TLRH-SQLI (Spring, HTML/CSS, JavaScript, PostgreSQL)
 
 GESTION-TLRH-SQLI is an application that manages human capital inside SQLI. The application was completed as part of my internship at the company in Summer 2022.
 
