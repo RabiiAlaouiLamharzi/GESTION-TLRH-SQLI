@@ -58,9 +58,12 @@ https://user-images.githubusercontent.com/103124512/187304108-596685d6-8dab-4b51
   
   **Error Handling Examples:**
   - Sign In
+  
   <img width="688" alt="Screenshot 2022-08-30 at 01 30 37" src="https://user-images.githubusercontent.com/103124512/187322095-82ccdd81-5f0a-471e-8203-2c56aa065d49.png">
   - Register
+  
   <img width="1344" alt="Screenshot 2022-08-30 at 01 30 16" src="https://user-images.githubusercontent.com/103124512/187322056-26c698e2-0f7d-4391-8eaf-0a7ebb2f057e.png">
   - Add Collaborateur (I can't add because the date is wrong)
+  
   <img width="1344" alt="Screenshot 2022-08-30 at 01 29 54" src="https://user-images.githubusercontent.com/103124512/187322023-df2159de-90e1-42af-8c92-172610215264.png">
 
